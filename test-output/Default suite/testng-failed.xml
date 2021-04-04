@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCase.SAL57">
+      <class name="testCase.SAL22">
         <methods>
-          <include name="verifyAppleApp"/>
           <include name="launchBrowser"/>
+          <include name="sortDashboard"/>
         </methods>
-      </class> <!-- testCase.SAL57 -->
+      </class> <!-- testCase.SAL22 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15841" started-at="2021-04-04T12:45:59 IST" finished-at="2021-04-04T12:46:15 IST">
+  <suite name="Default suite" duration-ms="23633" started-at="2021-04-04T20:52:59 IST" finished-at="2021-04-04T20:53:23 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15841" started-at="2021-04-04T12:45:59 IST" finished-at="2021-04-04T12:46:15 IST">
-      <class name="testCase.SAL57">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCase.SAL57@553a3d88]" name="launchBrowser" is-config="true" duration-ms="4479" started-at="2021-04-04T12:45:59 IST" finished-at="2021-04-04T12:46:04 IST">
+    <test name="Default test" duration-ms="23633" started-at="2021-04-04T20:52:59 IST" finished-at="2021-04-04T20:53:23 IST">
+      <class name="testCase.SAL22">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCase.SAL22@553a3d88]" name="launchBrowser" is-config="true" duration-ms="4289" started-at="2021-04-04T20:52:59 IST" finished-at="2021-04-04T20:53:03 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="verifyAppleApp()[pri:0, instance:testCase.SAL57@553a3d88]" name="verifyAppleApp" duration-ms="11329" started-at="2021-04-04T12:46:04 IST" finished-at="2021-04-04T12:46:15 IST">
+        <test-method status="PASS" signature="sortDashboard()[pri:0, instance:testCase.SAL22@553a3d88]" name="sortDashboard" duration-ms="19315" started-at="2021-04-04T20:53:03 IST" finished-at="2021-04-04T20:53:23 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAppleApp -->
-      </class> <!-- testCase.SAL57 -->
+        </test-method> <!-- sortDashboard -->
+      </class> <!-- testCase.SAL22 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
