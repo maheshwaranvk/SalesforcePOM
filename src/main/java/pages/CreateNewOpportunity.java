@@ -1,12 +1,21 @@
 package pages;
 
-import baseClass.ProjectSpecificMethods;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.asserts.SoftAssert;
 
-public class CreateNewOpportunity extends ProjectSpecificMethods{
+import baseClass.ProjectSpecificMethods;
+import baseClass.WrapperClass;
+
+public class CreateNewOpportunity extends WrapperClass{
 
 	
-	public CreateNewOpportunity() {
-		waitForIt("//div[@class='slds-modal__header']/*[text()='New Opportunity']");
+	public CreateNewOpportunity(RemoteWebDriver driver,JavascriptExecutor js, SoftAssert as) {
+		this.driver=driver;
+		this.js=js;
+		this.as=as;
+		
+		waitForIt("xpath","//div[@class='slds-modal__header']/*[text()='New Opportunity']");
 	}
 	
 	public CreateNewOpportunity enterOpportunityName(String name) {
@@ -28,6 +37,6 @@ public class CreateNewOpportunity extends ProjectSpecificMethods{
 	
 	public OpenOpportunity clickSave() {
 		driver.findElementByXPath("//button[text()='Save']").click();
-		return new OpenOpportunity();
+		return new OpenOpportunity(driver,js,as);
 	}
 }

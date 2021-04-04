@@ -3,15 +3,16 @@ package testCase;
 import org.testng.annotations.Test;
 
 import baseClass.ProjectSpecificMethods;
+import baseClass.WrapperClass;
 import pages.LoginPage;
 
-public class SAL2CreateOpportunity extends ProjectSpecificMethods{
+public class SAL2CreateOpportunity extends WrapperClass{
 
 	public String name ="BootCampt by Mahesh";
 	
 	@Test
 	public void createOpportunity() {
-		new LoginPage()
+		new LoginPage(driver,js,as)
 		.enterUserName()
 		.enterPassword()
 		.clickLoginButton()

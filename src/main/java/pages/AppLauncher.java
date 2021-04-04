@@ -1,22 +1,29 @@
 package pages;
 
-import baseClass.ProjectSpecificMethods;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.asserts.SoftAssert;
 
-public class AppLauncher extends ProjectSpecificMethods{
+import baseClass.*;
+
+public class AppLauncher extends WrapperClass{
 
 	
-	public AppLauncher() {
-		waitForIt("//h2[text()='App Launcher']");
+	public AppLauncher(RemoteWebDriver driver, JavascriptExecutor js, SoftAssert as) {
+		this.driver=driver;
+		this.js=js;
+		this.as=as;
+		waitForIt("xpath","//h2[text()='App Launcher']");
 	}
 	
 	public Opportunities clickOppurtunities() {
-		js.executeScript("arguments[0].click()", driver.findElementByXPath("//p[text()='Opportunities']"));
-		return new Opportunities();
+		javaScriptClick(driver.findElementByXPath("//p[text()='Opportunities']"));
+		return new Opportunities(driver,js,as);
 	}
 	
 	public Dashboards clickDashboard() {
-		js.executeScript("arguments[0].click()", driver.findElementByXPath("//p[text()='Dashboards']"));
-		return new Dashboards();
+		javaScriptClick(driver.findElementByXPath("//p[text()='Dashboards']"));
+		return new Dashboards(driver,js,as);
 
 	}
 }

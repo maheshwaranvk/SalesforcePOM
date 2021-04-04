@@ -1,11 +1,20 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.asserts.SoftAssert;
+
 import baseClass.ProjectSpecificMethods;
+import baseClass.WrapperClass;
 
-public class CreateNewDashboard extends ProjectSpecificMethods{
+public class CreateNewDashboard extends WrapperClass{
 
-	public CreateNewDashboard() {
-		waitForIt("//iframe[@title='dashboard']");
+	public CreateNewDashboard(RemoteWebDriver driver,JavascriptExecutor js,SoftAssert as) {
+		this.driver=driver;
+		this.js=js;
+		this.as=as;
+		
+		waitForIt("xpath","//iframe[@title='dashboard']");
 		driver.switchTo().frame(driver.findElementByXPath("//iframe[@title='dashboard']"));
 	}
 	
@@ -16,9 +25,10 @@ public class CreateNewDashboard extends ProjectSpecificMethods{
 	
 	public CreateDashboard2 clickDashboardCreate() throws InterruptedException {
 		driver.findElementByXPath("//button[text()='Create']").click();
-		driver.switchTo().frame(driver.findElementByXPath("//iframe[@title='dashboard']"));
+		
 		Thread.sleep(3000);
-		return new CreateDashboard2();
+		driver.switchTo().frame(driver.findElementByXPath("//iframe[@title='dashboard']"));
+		return new CreateDashboard2(driver,js,as);
 	}
 	
 }
