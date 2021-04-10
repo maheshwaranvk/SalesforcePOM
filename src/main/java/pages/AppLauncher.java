@@ -24,6 +24,10 @@ public class AppLauncher extends WrapperClass{
 	public Dashboards clickDashboard() {
 		javaScriptClick(driver.findElementByXPath("//p[text()='Dashboards']"));
 		return new Dashboards(driver,js,as);
-
+	}
+	
+	public Sales clickSales() {
+		elementClick("xpath", "//p[text()='Sales']");
+		return new Sales(driver,js,as);
 	}
 }

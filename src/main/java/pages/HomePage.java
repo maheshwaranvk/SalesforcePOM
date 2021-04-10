@@ -36,4 +36,11 @@ public class HomePage extends WrapperClass{
 	return new AppleStoreRedirect(driver,js,as);
 	}
 	
+	public ReleaseNotes clickGetStartedFromViewReleaseNotes() {
+		while(!(driver.findElementByXPath("//span[text()='View Release Notes']").isDisplayed())){
+		elementClick("xpath", "//button[@class='slds-button slds-button--neutral rightArrowButton uiButton']");
+		}
+		elementClick("xpath", "(//article[@class='onesetupHelpTile']//span[text()='View Release Notes']/following::span[text()='Get Started'])[1]");
+		return new ReleaseNotes(driver,js,as);
+	}
 }

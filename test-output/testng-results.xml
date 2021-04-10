@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23633" started-at="2021-04-04T20:52:59 IST" finished-at="2021-04-04T20:53:23 IST">
+  <suite name="Default suite" duration-ms="35920" started-at="2021-04-05T06:03:03 IST" finished-at="2021-04-05T06:03:39 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23633" started-at="2021-04-04T20:52:59 IST" finished-at="2021-04-04T20:53:23 IST">
-      <class name="testCase.SAL22">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCase.SAL22@553a3d88]" name="launchBrowser" is-config="true" duration-ms="4289" started-at="2021-04-04T20:52:59 IST" finished-at="2021-04-04T20:53:03 IST">
+    <test name="Default test" duration-ms="35920" started-at="2021-04-05T06:03:03 IST" finished-at="2021-04-05T06:03:39 IST">
+      <class name="testCase.SAL81">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCase.SAL81@553a3d88]" name="launchBrowser" is-config="true" duration-ms="4331" started-at="2021-04-05T06:03:03 IST" finished-at="2021-04-05T06:03:08 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="sortDashboard()[pri:0, instance:testCase.SAL22@553a3d88]" name="sortDashboard" duration-ms="19315" started-at="2021-04-04T20:53:03 IST" finished-at="2021-04-04T20:53:23 IST">
+        <test-method status="PASS" signature="uploadPDFTC()[pri:0, instance:testCase.SAL81@553a3d88]" name="uploadPDFTC" duration-ms="31558" started-at="2021-04-05T06:03:08 IST" finished-at="2021-04-05T06:03:39 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sortDashboard -->
-      </class> <!-- testCase.SAL22 -->
+        </test-method> <!-- uploadPDFTC -->
+      </class> <!-- testCase.SAL81 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

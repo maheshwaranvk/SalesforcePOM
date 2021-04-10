@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.asserts.SoftAssert;
 
@@ -20,6 +21,18 @@ public class Opportunities extends WrapperClass{
 	public CreateNewOpportunity clickNewOpportunities() {
 		driver.findElementByXPath("//div[@title='New']").click();
 		return new CreateNewOpportunity(driver,js,as);
-
 	}
+	
+	public Opportunities searchOpportunity(String searchVal) throws InterruptedException {
+		js.executeScript("arguments[0].value='"+searchVal+"'", driver.findElementByXPath("//input[@class='slds-input']"));
+		locateElement("xpath", "//input[@class='slds-input']").sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		return this;
+	}
+	
+	public OpenOpportunity clickFirstSearchedItem() {
+		elementClick("xpath", "(//table[@role='grid']//tr//th//a[contains(@title,'Bootcamp')])[1]");
+		return new OpenOpportunity(driver,js,as);
+	}
+
 }

@@ -1,11 +1,22 @@
 package baseClass;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -153,4 +164,44 @@ public class WrapperClass{
 		
 		driver.switchTo().window(windowHandlesList.get(windowIndex));
 	}
+	
+//--------------------------READ PDF--------------------------------------------------------------------------------------------------------
+
+public boolean readPDF(String pdfurl , String verifyText) throws IOException {
+		URL url = new URL(pdfurl);
+		
+		InputStream openStream = url.openStream();
+		BufferedInputStream fileParse = new BufferedInputStream(openStream);
+		
+		PDDocument document = null;
+		document = PDDocument.load(fileParse);
+		
+		String text = new PDFTextStripper().getText(document);
+		
+		return text.contains(verifyText);
+
+	}
+
+//--------------------------UPLOAD A FILE--------------------------------------------------------------------------------------------------------
+
+public void uploadFile(String filePath) throws AWTException, InterruptedException {
+	StringSelection ss = new StringSelection(filePath);
+	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+	
+	Robot robo = new Robot();
+	
+	robo.setAutoDelay(2000);
+	
+	robo.keyPress(KeyEvent.VK_CONTROL);
+	robo.keyPress(KeyEvent.VK_V);
+	
+	robo.keyRelease(KeyEvent.VK_CONTROL);
+	robo.keyRelease(KeyEvent.VK_V);
+	
+	robo.keyPress(KeyEvent.VK_ENTER);
+	robo.keyRelease(KeyEvent.VK_ENTER);
+	
+	Thread.sleep(3000);
 }
+}
+

@@ -16,8 +16,13 @@ public class OpenOpportunity extends WrapperClass{
 		waitForIt("xpath","//div[@class='entityNameTitle slds-line-height--reset']");
 	}
 	
-	public void verifyOpportunity(String name) {
+	public OpenOpportunity verifyOpportunity(String name) {
 		as.assertTrue(driver.findElementByXPath("//div[@class='highlights slds-clearfix slds-page-header slds-page-header_record-home fixed-position']//*[text()='"+name+"']").isDisplayed());
-
+		return this;
+	}
+	
+	public UploadPDF clickUploadFileInOpportunity() {
+		javaScriptClick(driver.findElementByXPath("(//div[@class='slds-tabs_card'])[2]//span[@class='slds-file-selector__button slds-button slds-button_neutral']"));
+		return new UploadPDF(driver,js,as);
 	}
 }

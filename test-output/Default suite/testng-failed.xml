@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCase.SAL22">
+      <class name="testCase.SAL81">
         <methods>
           <include name="launchBrowser"/>
-          <include name="sortDashboard"/>
+          <include name="uploadPDFTC"/>
         </methods>
-      </class> <!-- testCase.SAL22 -->
+      </class> <!-- testCase.SAL81 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
