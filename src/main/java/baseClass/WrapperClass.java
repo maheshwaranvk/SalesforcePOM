@@ -66,6 +66,8 @@ public class WrapperClass{
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		js = (JavascriptExecutor) driver;
 		driver.manage().deleteAllCookies();
+		
+		
 		new ProjectSpecificMethods(driver,js).openApplication();
 	}
 
