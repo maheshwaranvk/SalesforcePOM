@@ -30,4 +30,10 @@ public class AppLauncher extends WrapperClass{
 		elementClick("xpath", "//p[text()='Sales']");
 		return new Sales(driver,js,as);
 	}
+	
+	public PaymentGatewayLogs clickPaymentGatewayLogs(){
+		javaScriptClick(locateElement("xpath","//p[text()='Payment Gateway Logs']"));
+		//elementClick("xpath","//p[text()='Payment Gateway Logs']");
+		return new PaymentGatewayLogs(driver,js,as);
+	}
 }
